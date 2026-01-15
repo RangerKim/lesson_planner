@@ -1,4 +1,4 @@
-
+Got it! Here’s a **simple README** updated to include instructions for how to **use the prompts with an LLM** to generate lesson plans and then convert them to HTML.
 
 ---
 
@@ -42,20 +42,33 @@ Open your browser at [http://127.0.0.1:5000](http://127.0.0.1:5000) to use the a
 
 ## Usage
 
-1. Fill out the form fields with lesson information.
-2. Generate the lesson plan prompt.
-3. Download the prompt as a text file.
+1. Fill out the form fields with your lesson information (topic, grade band, duration, etc.).
+2. Click **Generate Prompt** – this creates a detailed **AI prompt** describing the lesson you want to generate.
+3. Click **Download Prompt** to save it as a text file.
+
+**Next steps with an LLM:**
+
+1. Take the downloaded prompt and input it into your favorite LLM (like ChatGPT or another AI model) to **generate a full lesson plan**.
+2. Copy the resulting lesson plan text.
+3. Return to the app and paste it into the HTML conversion section (or use the second prompt in the app) to **convert the generated lesson plan into a fully formatted HTML document**.
+4. The HTML will include **semantic headings, tables for procedures, color-coded instructional roles, and structured content** ready for teachers to use.
+
+---
 
 ## Notes
 
 * Keep `index.html` inside the `templates/` folder.
 * This app runs locally; to make it available online, deploy to a service like Render, Railway, or PythonAnywhere.
+* Ensure Python and Flask are installed before running the app.
 
 ```
 
 ---
 
-This version is **short, beginner-friendly, and includes all essential steps**.  
+This makes it **very clear for a user** that:  
 
-If you want, I can also make a **1-line description for GitHub repo title and tagline** that looks neat for visitors. Do you want me to do that?
-```
+1. The first prompt generates a structured lesson plan via an LLM.  
+2. The second prompt (built into your app) converts that lesson plan text into **usable HTML**.  
+
+---
+

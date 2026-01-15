@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌿 Lesson Plan Prompt Builder</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.5; margin: 20px; }
+h1,h2 { color: #2c3e50; }
+textarea { font-family: monospace; }
+button { padding: 8px 16px; font-size: 16px; margin-top: 10px; }
+hr { margin: 30px 0; }
+</style>
+</head>
+<body>
+
+<h1>🌿 Lesson Plan Prompt Builder</h1>
+<p>Enter basic lesson details below to generate an AI-ready lesson plan prompt. Optional fields allow more control.</p>
+
+<form method="POST">
+    <label>Topic or Phenomenon:<br>
+        <input type="text" name="topic" style="width: 100%;" placeholder="e.g., Ichthyofauna of the Fork">
+    </label><br><br>
+
+    <label>Grade Band:<br>
+        <input type="text" name="grade_band" placeholder="e.g., 5-8">
+    </label><br><br>
+
+    <label>Duration:<br>
+        <input type="text" name="duration" placeholder="e.g., 60 minutes">
+    </label><br><br>
+
+    <label>Learning Setting:<br>
+        <select name="setting">
+            <option value="Indoor">Indoor</option>
+            <option value="Outdoor">Outdoor</option>
+            <option value="Hybrid (Indoor & Outdoor)" selected>Hybrid (Indoor & Outdoor)</option>
+        </select>
+    </label><br><br>
+
+    <label>Place-Based Context (optional):<br>
+        <input type="text" name="place" placeholder="e.g., Floyds Fork">
+    </label><br><br>
+
+    <label>Primary Activity Style:<br>
+        <select name="activity_style">
+            <option value="Movement-Based / Kinesthetic">Movement-Based / Kinesthetic</option>
+            <option value="Creative / Arts-Based">Creative / Arts-Based</option>
+            <option value="Discussion / Reflection">Discussion / Reflection</option>
+            <option value="Hands-On Investigation">Hands-On Investigation</option>
+        </select>
+    </label><br><br>
+
+    <label>Expected Student Output:<br>
+        <input type="text" name="student_output" placeholder="e.g., Discussion & explanation">
+    </label><br><br>
+
+    <label>Key Vocabulary (optional):<br>
+        <input type="text" name="key_vocab" placeholder="e.g., Photosynthesis, Pollination">
+    </label><br><br>
+
+    <label>Key Concept (optional):<br>
+        <input type="text" name="key_concept" placeholder="e.g., Ecosystem interactions">
+    </label><br><br>
+
+    <button type="submit">🌱 Generate Prompt</button>
+</form>
+
+<!-- Display generated Step 1 prompt -->
+{% if prompt_text %}
+<hr>
+<h2>Step 1: Your AI-Ready Lesson Plan Prompt</h2>
+<p>Copy this prompt to feed into your preferred LLM to generate the full lesson plan:</p>
+<textarea rows="15" style="width:100%;">{{ prompt_text }}</textarea>
+
+<form method="POST" action="/download">
+    <input type="hidden" name="prompt_text" value="{{ prompt_text }}">
+    <button type="submit">💾 Download Prompt as .txt</button>
+</form>
+{% endif %}
+
+<!-- Display Step 2 boilerplate prompt -->
+<hr>
+<h2>Step 2: HTML Conversion Prompt (Boilerplate)</h2>
+<p>Use this fixed prompt to convert your LLM-generated lesson plan into stylized HTML:</p>
+<textarea rows="20" style="width:100%;">{{ html_prompt }}</textarea>
+
+</body>
+</html>

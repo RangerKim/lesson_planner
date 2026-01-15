@@ -1,4 +1,4 @@
-Got it! Here’s a **simple README** updated to include instructions for how to **use the prompts with an LLM** to generate lesson plans and then convert them to HTML.
+
 
 ---
 
